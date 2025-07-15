@@ -3,12 +3,15 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-hero flex items-center overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-60">
-        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20"></div>
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-primary/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/lovable-uploads/0f717c62-c123-4e90-9af4-ffc97bcb13ad.png" 
+          alt="Germany landscape with Brandenburg Gate and educational elements"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/80"></div>
       </div>
       
       <div className="container-custom relative z-10">
