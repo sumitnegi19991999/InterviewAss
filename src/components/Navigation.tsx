@@ -18,33 +18,38 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-18">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-heading font-bold text-xl">
-            <div className="p-2 bg-gradient-primary rounded-lg text-primary-foreground">
-              <GraduationCap size={24} />
+          <Link to="/" className="flex items-center space-x-3 font-heading font-bold text-xl group">
+            <div className="p-2.5 bg-gradient-primary rounded-xl text-primary-foreground group-hover:scale-105 transition-transform duration-200">
+              <GraduationCap size={26} />
             </div>
-            <span className="text-gradient">ConnectGermany</span>
+            <span className="text-gradient bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              ConnectGermany
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-medium transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 relative ${
                   isActive(item.path)
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-foreground hover:text-primary'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-foreground hover:text-primary hover:bg-muted/50'
                 }`}
               >
                 {item.name}
+                {isActive(item.path) && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
+                )}
               </Link>
             ))}
-            <Button className="btn-primary">
+            <Button className="ml-4 bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-200">
               Get Started
             </Button>
           </div>
@@ -60,23 +65,23 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border shadow-soft animate-fade-in">
-            <div className="px-4 py-4 space-y-4">
+          <div className="md:hidden absolute top-18 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-elegant animate-fade-in">
+            <div className="px-4 py-6 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block py-2 font-medium transition-colors duration-200 ${
+                  className={`block py-3 px-4 rounded-lg font-medium transition-all duration-200 ${
                     isActive(item.path)
-                      ? 'text-primary'
-                      : 'text-foreground hover:text-primary'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground hover:text-primary hover:bg-muted/50'
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button className="btn-primary w-full mt-4">
+              <Button className="w-full mt-4 bg-gradient-primary hover:shadow-glow">
                 Get Started
               </Button>
             </div>
