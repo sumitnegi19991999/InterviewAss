@@ -1,64 +1,68 @@
-import Layout from '@/components/Layout';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import Layout from "@/components/Layout";
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    service: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    service: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Visit Our Office',
-      info: 'Connaught Place, New Delhi, India - 110001',
-      detail: 'Monday to Saturday: 9:00 AM - 6:00 PM'
+      title: "Visit Our Office",
+      info: "Connaught Place, New Delhi, India - 110001",
+      detail: "Monday to Saturday: 9:00 AM - 6:00 PM",
     },
     {
       icon: Phone,
-      title: 'Call Us',
-      info: '+91 98765 43210',
-      detail: 'Available for consultation calls'
+      title: "Call Us",
+      info: "+91 98765 43210",
+      detail: "Available for consultation calls",
     },
     {
       icon: Mail,
-      title: 'Email Us',
-      info: 'info@connectgermany.com',
-      detail: 'We respond within 24 hours'
+      title: "Email Us",
+      info: "info@connectgermany.in",
+      detail: "We respond within 24 hours",
     },
     {
       icon: Clock,
-      title: 'Office Hours',
-      info: 'Mon - Sat: 9:00 AM - 6:00 PM',
-      detail: 'Sunday: Closed'
-    }
+      title: "Office Hours",
+      info: "Mon - Sat: 9:00 AM - 6:00 PM",
+      detail: "Sunday: Closed",
+    },
   ];
 
   const services = [
-    'University Selection',
-    'Visa Assistance',
-    'Scholarship Guidance',
-    'Pre-departure Support',
-    'Post-arrival Services',
-    'Career Counseling'
+    "University Selection",
+    "Visa Assistance",
+    "Scholarship Guidance",
+    "Pre-departure Support",
+    "Post-arrival Services",
+    "Career Counseling",
   ];
 
   return (
@@ -70,8 +74,9 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
-            Ready to start your German education journey? Get in touch with our expert counselors for 
-            personalized guidance and support tailored to your academic goals.
+            Ready to start your German education journey? Get in touch with our
+            expert counselors for personalized guidance and support tailored to
+            your academic goals.
           </p>
           <Button variant="accent" size="lg">
             <MessageCircle size={20} />
@@ -120,7 +125,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -155,7 +160,7 @@ const Contact = () => {
                     </select>
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Message
@@ -169,7 +174,7 @@ const Contact = () => {
                     placeholder="Tell us about your educational goals and how we can help you"
                   />
                 </div>
-                
+
                 <Button type="submit" className="w-full" size="lg">
                   <Send size={20} />
                   Send Message
@@ -184,8 +189,9 @@ const Contact = () => {
                   Get in Touch
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  We're here to help you navigate your German education journey. Reach out to us through 
-                  any of the following channels, and our expert counselors will get back to you promptly.
+                  We're here to help you navigate your German education journey.
+                  Reach out to us through any of the following channels, and our
+                  expert counselors will get back to you promptly.
                 </p>
               </div>
 
@@ -193,14 +199,23 @@ const Contact = () => {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-4 p-4 bg-card rounded-lg shadow-card">
+                    <div
+                      key={index}
+                      className="flex items-start space-x-4 p-4 bg-card rounded-lg shadow-card"
+                    >
                       <div className="p-3 bg-gradient-primary rounded-lg text-primary-foreground">
                         <Icon size={20} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
-                        <p className="text-muted-foreground mb-1">{info.info}</p>
-                        <p className="text-sm text-muted-foreground">{info.detail}</p>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          {info.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-1">
+                          {info.info}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {info.detail}
+                        </p>
                       </div>
                     </div>
                   );
@@ -217,7 +232,10 @@ const Contact = () => {
                     <Phone size={16} />
                     Schedule a Call
                   </Button>
-                  <Button variant="outline" className="w-full bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button
+                    variant="outline"
+                    className="w-full bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  >
                     <MessageCircle size={16} />
                     WhatsApp Chat
                   </Button>
@@ -236,7 +254,8 @@ const Contact = () => {
               Visit Our Office
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Located in the heart of New Delhi, our office is easily accessible by metro and other public transport.
+              Located in the heart of New Delhi, our office is easily accessible
+              by metro and other public transport.
             </p>
           </div>
 
@@ -246,8 +265,12 @@ const Contact = () => {
               <div className="text-center space-y-4">
                 <MapPin size={48} className="text-primary mx-auto" />
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">ConnectGermany Office</h3>
-                  <p className="text-muted-foreground">Connaught Place, New Delhi, India - 110001</p>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    ConnectGermany Office
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Connaught Place, New Delhi, India - 110001
+                  </p>
                   <Button variant="outline" className="mt-4">
                     View on Google Maps
                   </Button>
@@ -262,22 +285,34 @@ const Contact = () => {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-primary-foreground mx-auto mb-3">
                 <MapPin size={24} />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Central Location</h3>
-              <p className="text-sm text-muted-foreground">Easy access from all parts of Delhi NCR</p>
+              <h3 className="font-semibold text-foreground mb-2">
+                Central Location
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Easy access from all parts of Delhi NCR
+              </p>
             </div>
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-primary-foreground mx-auto mb-3">
                 <Clock size={24} />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Flexible Hours</h3>
-              <p className="text-sm text-muted-foreground">Extended hours for working professionals</p>
+              <h3 className="font-semibold text-foreground mb-2">
+                Flexible Hours
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Extended hours for working professionals
+              </p>
             </div>
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-primary-foreground mx-auto mb-3">
                 <MessageCircle size={24} />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Expert Consultation</h3>
-              <p className="text-sm text-muted-foreground">One-on-one guidance from education experts</p>
+              <h3 className="font-semibold text-foreground mb-2">
+                Expert Consultation
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                One-on-one guidance from education experts
+              </p>
             </div>
           </div>
         </div>

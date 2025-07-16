@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,33 +13,38 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const isActive = (path: string) => location.pathname === path;
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Career', path: '/career' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact Us', path: '/contact' }
+    { name: "Home", path: "/" },
+    { name: "Career", path: "/career" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/95 backdrop-blur-sm border-b border-border shadow-sm' 
-        : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-heading font-bold text-xl">
-            <div className="p-2 bg-gradient-primary rounded-lg text-primary-foreground">
+          <Link
+            to="/"
+            className="flex items-center space-x-2 font-heading font-bold text-xl"
+          >
+            {/* <div className="p-2 bg-gradient-primary rounded-lg text-primary-foreground">
               <GraduationCap size={24} />
-            </div>
+            </div> */}
             <span className="text-gradient">ConnectGermany</span>
           </Link>
 
@@ -51,16 +56,14 @@ const Navigation = () => {
                 to={item.path}
                 className={`font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-foreground hover:text-primary'
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="btn-primary">
-              Get Started
-            </Button>
+            <Button className="btn-primary">Get Started</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -83,16 +86,14 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block py-2 font-medium transition-colors duration-200 ${
                     isActive(item.path)
-                      ? 'text-primary'
-                      : 'text-foreground hover:text-primary'
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button className="btn-primary w-full mt-4">
-                Get Started
-              </Button>
+              <Button className="btn-primary w-full mt-4">Get Started</Button>
             </div>
           </div>
         )}
