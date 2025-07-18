@@ -33,25 +33,33 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/connectgermany"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/connectgermany"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/connect-germany-548992173/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://x.com/connectgermany"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Twitter size={20} />
@@ -138,13 +146,14 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-primary" />
                 <span className="text-muted-foreground text-sm">
-                  New Delhi, India
+                  B52, Street Number 6, Dashrath Puri Dabri Palam Road, New
+                  Delhi 110045
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-primary" />
                 <span className="text-muted-foreground text-sm">
-                  +91 98765 43210
+                  +91 9560123756, +91 9871318099, +91 9811523756
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -159,7 +168,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 ConnectGermany. All rights reserved. | Privacy Policy | Terms
+            © 2025 ConnectGermany. All rights reserved. | Privacy Policy | Terms
             of Service
           </p>
         </div>

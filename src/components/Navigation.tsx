@@ -42,10 +42,11 @@ const Navigation = () => {
             to="/"
             className="flex items-center space-x-2 font-heading font-bold text-xl"
           >
-            {/* <div className="p-2 bg-gradient-primary rounded-lg text-primary-foreground">
-              <GraduationCap size={24} />
-            </div> */}
-            <span className="text-gradient">ConnectGermany</span>
+            <img
+              src="/images/connect-germany-logo.svg"
+              alt="Germany Illustration"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

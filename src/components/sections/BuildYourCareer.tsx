@@ -20,7 +20,7 @@ const CareerServicesSection = () => {
       title: "German Language",
       description:
         "When learning German, it's essential to understand the different proficiency levels, which are based on the Common European Framework of Reference for Languages (CEFR). The CEFR standardizes language skills across Europe and categorizes them into six levels, ranging from A1 (beginner) to C2 (proficient). Knowing your level helps you set clear goals and track your progress.",
-      image: "/api/placeholder/400/250",
+      image: "/images/german-language.jpg",
       features: [
         "A1 to C2 Level Courses",
         "CEFR Certified",
@@ -33,7 +33,7 @@ const CareerServicesSection = () => {
       title: "Counselling",
       description:
         "We understand that every learner has unique needs. Our expert counselors will assess your current level and create a customized learning plan based on your goals, interests, and time availability. Whether you're focusing on conversational skills, academic language, or business German, we ensure your lessons are tailored to your objectives.",
-      image: "/api/placeholder/400/250",
+      image: "/images/counselling.jpg",
       features: [
         "Personalized Assessment",
         "Custom Learning Plans",
@@ -46,7 +46,7 @@ const CareerServicesSection = () => {
       title: "Confirmed Admission",
       description:
         "We apply to the best of the German Universities and help you to get admitted to the best of the specialized universities.",
-      image: "/api/placeholder/400/250",
+      image: "/images/confirmed-admission.jpg",
       features: [
         "Top University Applications",
         "Specialized Programs",
@@ -59,7 +59,7 @@ const CareerServicesSection = () => {
       title: "Visa & Living",
       description:
         "We make your German Visa process easier & efficient also act as a local guardian for accommodation & other support.",
-      image: "/api/placeholder/400/250",
+      image: "/images/visa-living.jpg",
       features: [
         "Visa Process Support",
         "Accommodation Assistance",
@@ -72,7 +72,7 @@ const CareerServicesSection = () => {
       title: "Buddy Services",
       description:
         'Moving to a new country for study, work, or travel can be an exciting yet overwhelming experience. Our Buddy Service is designed to make your transition smoother and more enjoyable by pairing you with a local "buddy" who will support you throughout your stay.',
-      image: "/api/placeholder/400/250",
+      image: "/images/buddy-services.jpg",
       features: [
         "Local Buddy Pairing",
         "Transition Support",
@@ -85,7 +85,7 @@ const CareerServicesSection = () => {
       title: "IELTS Preparation",
       description:
         "We start by assessing your current English proficiency and then create a customized study plan based on your target score, strengths, and areas for improvement. Whether you're aiming for an overall band score or need to focus on specific sections, we'll ensure your study plan is tailored to your needs.",
-      image: "/api/placeholder/400/250",
+      image: "/images/ielts-preparation.jpg",
       features: [
         "Proficiency Assessment",
         "Target Score Planning",

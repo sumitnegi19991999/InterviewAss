@@ -1,105 +1,114 @@
-import Layout from '@/components/Layout';
-import { CheckCircle, ArrowRight, GraduationCap, FileText, Plane, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Layout from "@/components/Layout";
+import {
+  CheckCircle,
+  ArrowRight,
+  GraduationCap,
+  FileText,
+  Plane,
+  Heart,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
     {
       icon: GraduationCap,
-      title: 'University Selection & Application',
-      description: 'Complete guidance for choosing the right university and program',
+      title: "University Selection & Application",
+      description:
+        "Complete guidance for choosing the right university and program",
       features: [
-        'Personalized university matching',
-        'Application document preparation',
-        'Statement of Purpose writing',
-        'Profile evaluation and enhancement',
-        'Deadline management'
+        "Personalized university matching",
+        "Application document preparation",
+        "Statement of Purpose writing",
+        "Profile evaluation and enhancement",
+        "Deadline management",
       ],
-      price: 'From ₹25,000'
+      price: "",
     },
     {
       icon: FileText,
-      title: 'Visa & Documentation',
-      description: 'Expert assistance with visa applications and required documents',
+      title: "Visa & Documentation",
+      description:
+        "Expert assistance with visa applications and required documents",
       features: [
-        'Student visa application support',
-        'Financial documentation guidance',
-        'Interview preparation',
-        'Document verification',
-        'Embassy appointment booking'
+        "Student visa application support",
+        "Financial documentation guidance",
+        "Interview preparation",
+        "Document verification",
+        "Embassy appointment booking",
       ],
-      price: 'From ₹15,000'
+      price: "",
     },
     {
       icon: Plane,
-      title: 'Pre-Departure Support',
-      description: 'Comprehensive preparation for your journey to Germany',
+      title: "Pre-Departure Support",
+      description: "Comprehensive preparation for your journey to Germany",
       features: [
-        'Accommodation assistance',
-        'Travel arrangements',
-        'Cultural orientation',
-        'Banking and insurance setup',
-        'Airport pickup coordination'
+        "Accommodation assistance",
+        "Travel arrangements",
+        "Cultural orientation",
+        "Banking and insurance setup",
+        "Airport pickup coordination",
       ],
-      price: 'From ₹10,000'
+      price: "",
     },
     {
       icon: Heart,
-      title: 'Post-Arrival Services',
-      description: 'Ongoing support to help you settle in Germany',
+      title: "Post-Arrival Services",
+      description: "Ongoing support to help you settle in Germany",
       features: [
-        'University enrollment assistance',
-        'Residence permit application',
-        'Job search guidance',
-        '24/7 emergency support',
-        'Alumni network access'
+        "University enrollment assistance",
+        "Residence permit application",
+        "Job search guidance",
+        "24/7 emergency support",
+        "Alumni network access",
       ],
-      price: 'From ₹8,000'
-    }
+      price: "",
+    },
   ];
 
   const packages = [
     {
-      name: 'Starter Package',
-      price: '₹35,000',
-      description: 'Perfect for students just beginning their journey',
+      name: "Starter Package",
+      price: "₹35,000",
+      description: "Perfect for students just beginning their journey",
       features: [
-        'University selection guidance',
-        'Application support (2 universities)',
-        'Basic document preparation',
-        'Initial consultation',
-        'Email support'
+        "University selection guidance",
+        "Application support (2 universities)",
+        "Basic document preparation",
+        "Initial consultation",
+        "Email support",
       ],
-      popular: false
+      popular: false,
     },
     {
-      name: 'Complete Package',
-      price: '₹65,000',
-      description: 'Comprehensive support from application to departure',
+      name: "Complete Package",
+      price: "₹65,000",
+      description: "Comprehensive support from application to departure",
       features: [
-        'All Starter Package features',
-        'Visa application support',
-        'Interview preparation',
-        'Scholarship guidance',
-        'Pre-departure orientation',
-        'Phone support'
+        "All Starter Package features",
+        "Visa application support",
+        "Interview preparation",
+        "Scholarship guidance",
+        "Pre-departure orientation",
+        "Phone support",
       ],
-      popular: true
+      popular: true,
     },
     {
-      name: 'Premium Package',
-      price: '₹95,000',
-      description: 'End-to-end support including post-arrival services',
+      name: "Premium Package",
+      price: "₹95,000",
+      description: "End-to-end support including post-arrival services",
       features: [
-        'All Complete Package features',
-        'Post-arrival support (6 months)',
-        'Accommodation assistance',
-        'Priority support',
-        'Career guidance',
-        'Alumni network access'
+        "All Complete Package features",
+        "Post-arrival support (6 months)",
+        "Accommodation assistance",
+        "Priority support",
+        "Career guidance",
+        "Alumni network access",
       ],
-      popular: false
-    }
+      popular: false,
+    },
   ];
 
   return (
@@ -111,8 +120,9 @@ const Services = () => {
             Our Services
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
-            Comprehensive support services designed to make your German education journey smooth, 
-            successful, and stress-free from application to graduation.
+            Comprehensive support services designed to make your German
+            education journey smooth, successful, and stress-free from
+            application to graduation.
           </p>
           <Button variant="accent" size="lg">
             Get Free Consultation
@@ -129,7 +139,8 @@ const Services = () => {
               Complete End-to-End Support
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From your first consultation to successful settlement in Germany, we provide comprehensive services at every step of your journey.
+              From your first consultation to successful settlement in Germany,
+              we provide comprehensive services at every step of your journey.
             </p>
           </div>
 
@@ -137,7 +148,10 @@ const Services = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div key={index} className="bg-card rounded-2xl p-8 shadow-card card-hover">
+                <div
+                  key={index}
+                  className="bg-card rounded-2xl p-8 shadow-card card-hover"
+                >
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="p-3 bg-gradient-primary rounded-xl text-primary-foreground">
                       <Icon size={24} />
@@ -146,21 +160,30 @@ const Services = () => {
                       <h3 className="text-xl font-heading font-semibold text-foreground">
                         {service.title}
                       </h3>
-                      <p className="text-muted-foreground">{service.description}</p>
+                      <p className="text-muted-foreground">
+                        {service.description}
+                      </p>
                     </div>
                   </div>
-                  
+
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center space-x-3"
+                      >
                         <CheckCircle size={16} className="text-success" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                  
+
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-primary">{service.price}</span>
+                    <span className="text-lg font-semibold text-primary">
+                      {service.price}
+                    </span>
                     <Button variant="outline" size="sm">
                       Learn More
                       <ArrowRight size={16} />
@@ -174,23 +197,24 @@ const Services = () => {
       </section>
 
       {/* Packages Section */}
-      <section className="py-16 bg-card">
+      {/* <section className="py-16 bg-card">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
               Choose Your Package
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Select the package that best fits your needs and budget. All packages include our commitment to your success.
+              Select the package that best fits your needs and budget. All
+              packages include our commitment to your success.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`bg-background rounded-2xl p-8 shadow-card relative ${
-                  pkg.popular ? 'ring-2 ring-primary scale-105' : ''
+                  pkg.popular ? "ring-2 ring-primary scale-105" : ""
                 }`}
               >
                 {pkg.popular && (
@@ -200,26 +224,35 @@ const Services = () => {
                     </span>
                   </div>
                 )}
-                
+
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-heading font-semibold text-foreground mb-2">
                     {pkg.name}
                   </h3>
-                  <div className="text-3xl font-bold text-primary mb-2">{pkg.price}</div>
-                  <p className="text-sm text-muted-foreground">{pkg.description}</p>
+                  <div className="text-3xl font-bold text-primary mb-2">
+                    {pkg.price}
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {pkg.description}
+                  </p>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
+                    <li
+                      key={featureIndex}
+                      className="flex items-center space-x-3"
+                    >
                       <CheckCircle size={16} className="text-success" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
-                
-                <Button 
-                  className="w-full" 
+
+                <Button
+                  className="w-full"
                   variant={pkg.popular ? "hero" : "default"}
                   size="lg"
                 >
@@ -230,7 +263,7 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us */}
       <section className="py-16 bg-background">

@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { toast } from "@/components/ui/sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,10 +13,33 @@ const Contact = () => {
     service: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    try {
+      const response = await fetch("https://formspree.io/f/xblklapl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        toast.success(
+          "Your message has been sent! We'll get back to you soon."
+        );
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          service: "",
+        });
+      } else {
+        toast.error("Form submission failed. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.");
+    }
   };
 
   const handleChange = (
@@ -33,13 +57,13 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Our Office",
-      info: "Connaught Place, New Delhi, India - 110001",
+      info: " B52, Street Number 6, Dashrath Puri Dabri Palam Road, NewDelhi-110045",
       detail: "Monday to Saturday: 9:00 AM - 6:00 PM",
     },
     {
       icon: Phone,
       title: "Call Us",
-      info: "+91 98765 43210",
+      info: "+91 9560123756 \n +91 9871318099\n+91 9811523756",
       detail: "Available for consultation calls",
     },
     {
@@ -228,16 +252,30 @@ const Contact = () => {
                   Need Immediate Assistance?
                 </h3>
                 <div className="space-y-3">
-                  <Button variant="accent" className="w-full">
+                  <Button
+                    variant="accent"
+                    className="w-full"
+                    onClick={() => {
+                      window.location.href =
+                        "mailto:info@connectgermany.in?subject=Schedule%20a%20Call";
+                    }}
+                  >
                     <Phone size={16} />
                     Schedule a Call
                   </Button>
                   <Button
+                    asChild
                     variant="outline"
                     className="w-full bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
                   >
-                    <MessageCircle size={16} />
-                    WhatsApp Chat
+                    <a
+                      href="https://wa.me/919560123756"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle size={16} />
+                      WhatsApp Chat
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -260,22 +298,18 @@ const Contact = () => {
           </div>
 
           <div className="bg-background rounded-2xl overflow-hidden shadow-card">
-            {/* Placeholder for Google Maps */}
-            <div className="h-96 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <MapPin size={48} className="text-primary mx-auto" />
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    ConnectGermany Office
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Connaught Place, New Delhi, India - 110001
-                  </p>
-                  <Button variant="outline" className="mt-4">
-                    View on Google Maps
-                  </Button>
-                </div>
-              </div>
+            {/* Google Maps Embed */}
+            <div className="h-96">
+              <iframe
+                title="ConnectGermany Office Location"
+                src="https://www.google.com/maps?q=28.605889,77.083417&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 

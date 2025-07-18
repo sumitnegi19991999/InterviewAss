@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/da9bb778-f0ab-4381-9b19-31b71c4265b3.png"
+          src="/images/hero-bg.jpg"
           alt="Germany Illustration"
           className="w-full h-full object-cover"
         />
@@ -53,7 +53,7 @@ const HeroSection = () => {
                 size="lg"
                 className="text-base font-semibold hover-scale"
               >
-                Our Services
+                <a href="/services">Our Services</a>
                 <ArrowRight size={20} />
               </Button>
               <Button
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover-scale"
               >
                 <Play size={20} />
-                Contact Us
+                <a href="/contact">Contact Us</a>
               </Button>
             </div>
 

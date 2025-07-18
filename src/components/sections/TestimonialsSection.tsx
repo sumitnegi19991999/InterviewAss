@@ -1,31 +1,31 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote } from "lucide-react";
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: 'Rahul Sharma',
-      program: 'Computer Science, TU Munich',
-      image: '/api/placeholder/80/80',
+      name: "AYANA AYANA",
+      program: "",
+      image: "",
       rating: 5,
-      text: 'ConnectGermany made my dream of studying in Germany a reality. Their guidance throughout the application process was exceptional, and I secured admission to my dream university.',
-      location: 'Delhi, India'
+      text: "ConnectGermany made my dream of studying in Germany a reality. Their guidance throughout the application process was exceptional, and I secured admission to my dream university.",
+      location: "Delhi, India",
     },
     {
-      name: 'Priya Patel',
-      program: 'Mechanical Engineering, RWTH Aachen',
-      image: '/api/placeholder/80/80',
+      name: "DONA MARIA",
+      program: "",
+      image: "/api/placeholder/80/80",
       rating: 5,
-      text: 'The visa process seemed daunting, but the team at ConnectGermany guided me step by step. Their expertise and support made everything smooth and stress-free.',
-      location: 'Mumbai, India'
+      text: "The visa process seemed daunting, but the team at ConnectGermany guided me step by step. Their expertise and support made everything smooth and stress-free.",
+      location: "Delhi, India",
     },
     {
-      name: 'Arjun Reddy',
-      program: 'Business Administration, University of Mannheim',
-      image: '/api/placeholder/80/80', 
+      name: "Dona SONY",
+      program: "",
+      image: "/api/placeholder/80/80",
       rating: 5,
-      text: 'From university selection to settling in Germany, ConnectGermany provided comprehensive support. I couldn\'t have done it without their expert guidance.',
-      location: 'Bangalore, India'
-    }
+      text: "From university selection to settling in Germany, ConnectGermany provided comprehensive support. I couldn't have done it without their expert guidance.",
+      location: "Delhi, India",
+    },
   ];
 
   return (
@@ -36,14 +36,15 @@ const TestimonialsSection = () => {
             Success Stories from Our Students
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hear directly from students who have successfully started their academic journey in Germany with our guidance.
+            Hear directly from students who have successfully started their
+            academic journey in Germany with our guidance.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-background rounded-2xl p-8 shadow-card card-hover relative"
             >
               {/* Quote Icon */}
@@ -69,9 +70,15 @@ const TestimonialsSection = () => {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-primary font-medium">{testimonial.program}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                  <h4 className="font-semibold text-foreground">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-sm text-primary font-medium">
+                    {testimonial.program}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {testimonial.location}
+                  </p>
                 </div>
               </div>
             </div>
